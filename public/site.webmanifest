@@ -1,0 +1,12 @@
+{
+  "name": "LaserHairRemovalUAE",
+  "short_name": "LaserHairUAE",
+  "description": "Compare laser hair removal clinics and prices in the UAE.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF7",
+  "theme_color": "#0F6E56",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

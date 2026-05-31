@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="LaserHairRemovalUAE icon">
+  <rect width="512" height="512" rx="96" fill="#0F6E56"/>
+  <circle cx="256" cy="256" r="160" fill="#FAFAF7"/>
+  <path d="M154 302h204v42H108V168h46v134Zm96-134v70h104v-70h46v176h-46v-66H250v66h-46V168h46Z" fill="#0A493A"/>
+  <path d="M126 398h260" stroke="#D85A30" stroke-width="34" stroke-linecap="round"/>
+</svg>
