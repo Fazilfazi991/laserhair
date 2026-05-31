@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { ScrollAnimations } from "@/components/ScrollAnimations";
 import { JsonLd } from "@/components/schema/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
@@ -75,12 +76,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang={siteConfig.language}>
       <body>
+        <ScrollAnimations />
         <JsonLd data={[organizationSchema, websiteSchema]} />
         <header className="site-header">
           <nav className="nav" aria-label="Main navigation">
             <a className="brand" href="/">
-              <span className="brand-mark">LH</span>
-              <span>LaserHairRemovalUAE.com</span>
+              <img
+                className="brand-logo"
+                src="/images/laser-hair-removal-logo.png"
+                alt="Laser Hair Removal"
+              />
             </a>
             <div className="nav-links">
               <a href="/cost/">Cost</a>
@@ -97,8 +102,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="section-inner footer-grid">
             <div>
               <a className="brand" href="/">
-                <span className="brand-mark">LH</span>
-                <span>LaserHairRemovalUAE.com</span>
+                <img
+                  className="brand-logo footer-logo"
+                  src="/images/laser-hair-removal-logo.png"
+                  alt="Laser Hair Removal"
+                />
               </a>
               <p>
                 Helping you compare clinics, prices and technologies for safe,

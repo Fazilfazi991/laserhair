@@ -140,11 +140,7 @@ export function FAQ({ page }: { page: Page }) {
 }
 
 export function StickyCta() {
-  return (
-    <div className="sticky-cta">
-      <a className="btn" href="#lead-form">Get free quotes</a>
-    </div>
-  );
+  return null;
 }
 
 export function PageSpecific({ page }: { page: Page }) {

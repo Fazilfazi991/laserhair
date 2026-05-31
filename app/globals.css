@@ -30,6 +30,123 @@ body {
   overflow-x: hidden;
 }
 
+.scroll-animations-ready .scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 720ms ease,
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms ease,
+    border-color 240ms ease,
+    background-color 240ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.scroll-animations-ready .scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.scroll-animations-ready .hero-copy.scroll-reveal,
+.scroll-animations-ready .cost-hero-copy.scroll-reveal,
+.scroll-animations-ready .clinic-city-copy.scroll-reveal,
+.scroll-animations-ready .bikini-copy.scroll-reveal {
+  transform: translate3d(-32px, 0, 0);
+}
+
+.scroll-animations-ready .hero-form-wrap.scroll-reveal,
+.scroll-animations-ready .hero-visual.scroll-reveal,
+.scroll-animations-ready .cost-hero-image.scroll-reveal,
+.scroll-animations-ready .quote-card.scroll-reveal,
+.scroll-animations-ready .why-enquire-card.scroll-reveal,
+.scroll-animations-ready .package-card.scroll-reveal {
+  transform: translate3d(32px, 0, 0);
+}
+
+.scroll-animations-ready .bikini-circle.scroll-reveal,
+.scroll-animations-ready .tile-icon {
+  transition:
+    opacity 720ms ease,
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms ease,
+    background-color 240ms ease;
+}
+
+.scroll-animations-ready .bikini-circle.scroll-reveal {
+  transform: scale(0.9);
+}
+
+.scroll-animations-ready .hero-copy.scroll-reveal.is-visible,
+.scroll-animations-ready .cost-hero-copy.scroll-reveal.is-visible,
+.scroll-animations-ready .clinic-city-copy.scroll-reveal.is-visible,
+.scroll-animations-ready .bikini-copy.scroll-reveal.is-visible,
+.scroll-animations-ready .hero-form-wrap.scroll-reveal.is-visible,
+.scroll-animations-ready .hero-visual.scroll-reveal.is-visible,
+.scroll-animations-ready .cost-hero-image.scroll-reveal.is-visible,
+.scroll-animations-ready .quote-card.scroll-reveal.is-visible,
+.scroll-animations-ready .why-enquire-card.scroll-reveal.is-visible,
+.scroll-animations-ready .package-card.scroll-reveal.is-visible,
+.scroll-animations-ready .bikini-circle.scroll-reveal.is-visible {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.treatment-card,
+.guide-card,
+.clinic-home-card,
+.card,
+.bikini-clinic-card,
+.offer-card,
+.full-clinic-card,
+.dark-clinic-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.treatment-card:hover,
+.guide-card:hover,
+.clinic-home-card:hover,
+.card:hover,
+.bikini-clinic-card:hover,
+.offer-card:hover,
+.full-clinic-card:hover,
+.dark-clinic-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(15, 110, 86, 0.28);
+  box-shadow: 0 18px 48px rgba(17, 42, 35, 0.1);
+}
+
+.scroll-animations-ready .scroll-reveal.is-visible.treatment-card:hover,
+.scroll-animations-ready .scroll-reveal.is-visible.guide-card:hover,
+.scroll-animations-ready .scroll-reveal.is-visible.clinic-home-card:hover,
+.scroll-animations-ready .scroll-reveal.is-visible.card:hover,
+.scroll-animations-ready .scroll-reveal.is-visible.bikini-clinic-card:hover,
+.scroll-animations-ready .scroll-reveal.is-visible.offer-card:hover,
+.scroll-animations-ready .scroll-reveal.is-visible.full-clinic-card:hover,
+.scroll-animations-ready .scroll-reveal.is-visible.dark-clinic-card:hover {
+  transform: translateY(-4px);
+}
+
+.scroll-animations-ready .is-visible .tile-icon,
+.scroll-animations-ready .scroll-reveal.is-visible.tile-icon {
+  animation: icon-pop 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--reveal-delay, 0ms) + 120ms);
+}
+
+@keyframes icon-pop {
+  0% {
+    transform: scale(0.82);
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -67,6 +184,13 @@ textarea {
   gap: 10px;
   font-weight: 800;
   color: var(--teal-dark);
+}
+
+.brand-logo {
+  display: block;
+  width: 186px;
+  height: 56px;
+  object-fit: contain;
 }
 
 .brand-mark {
@@ -224,7 +348,7 @@ p {
   margin-bottom: 2px;
 }
 
-.trust-strip span {
+.trust-strip .trust-icon {
   width: 22px;
   height: 22px;
   border: 1px solid #a9bbb5;
@@ -235,6 +359,16 @@ p {
   font-size: 8px;
   font-weight: 900;
   margin-bottom: 4px;
+}
+
+.trust-icon svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .panel,
@@ -448,6 +582,16 @@ tr:last-child td {
   color: var(--ink);
 }
 
+.site-footer .brand {
+  align-items: flex-start;
+}
+
+.site-footer .footer-logo {
+  width: 220px;
+  height: 76px;
+  object-position: left center;
+}
+
 .site-footer .section-inner {
   padding-top: 34px;
   padding-bottom: 22px;
@@ -569,6 +713,16 @@ tr:last-child td {
   font-size: 11px;
   font-weight: 900;
   border: 1px solid #dce8e4;
+}
+
+.tile-icon svg {
+  width: 25px;
+  height: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .clinic-section .section-inner {
@@ -911,6 +1065,16 @@ tr:last-child td {
   place-items: center;
   font-weight: 900;
   font-size: 10px;
+}
+
+.row-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .good-panel {
@@ -2163,6 +2327,18 @@ body:has(.full-body-page) .site-footer h3 {
   color: var(--white);
 }
 
+body:has(.full-body-page) .site-footer .footer-logo,
+body:has(.dark-skin-page) .site-footer .footer-logo,
+body:has(.deals-page) .site-footer .footer-logo,
+body:has(.underarms-page) .site-footer .footer-logo,
+body:has(.bikini-page) .site-footer .footer-logo,
+body:has(.face-page) .site-footer .footer-logo,
+body:has(.legs-page) .site-footer .footer-logo {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
 body:has(.full-body-page) .footer-grid a,
 body:has(.full-body-page) .footer-grid p,
 body:has(.full-body-page) .copyright {
@@ -2505,6 +2681,28 @@ body:has(.face-page) .copyright {
   color: rgba(255,255,255,0.82);
 }
 
+.legs-hero {
+  background:
+    linear-gradient(90deg, rgba(0, 82, 65, 0.98), rgba(0, 82, 65, 0.92) 44%, rgba(0, 82, 65, 0.08) 58%, rgba(0, 82, 65, 0) 100%),
+    url("/images/legs-hero.png") center right/cover;
+}
+
+body:has(.legs-page) .site-footer {
+  background: linear-gradient(90deg, #00513f, #003d30);
+  color: var(--white);
+}
+
+body:has(.legs-page) .site-footer .brand,
+body:has(.legs-page) .site-footer h3 {
+  color: var(--white);
+}
+
+body:has(.legs-page) .footer-grid a,
+body:has(.legs-page) .footer-grid p,
+body:has(.legs-page) .copyright {
+  color: rgba(255,255,255,0.82);
+}
+
 @media (max-width: 860px) {
   .nav {
     align-items: flex-start;
@@ -2565,15 +2763,7 @@ body:has(.face-page) .copyright {
   }
 
   .sticky-cta {
-    display: flex;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 30;
-    padding: 10px 14px;
-    background: rgba(250,250,247,0.96);
-    border-top: 1px solid var(--line);
+    display: none;
   }
 
   .sticky-cta .btn {
@@ -2581,7 +2771,7 @@ body:has(.face-page) .copyright {
   }
 
   body {
-    padding-bottom: 72px;
+    padding-bottom: 0;
   }
 
   .cta-band {
@@ -2845,6 +3035,12 @@ body:has(.face-page) .copyright {
       url("/images/face-hero.png") center right/cover;
   }
 
+  .legs-hero {
+    background:
+      linear-gradient(90deg, rgba(0, 82, 65, 0.96), rgba(0, 82, 65, 0.82)),
+      url("/images/legs-hero.png") center right/cover;
+  }
+
   .bikini-hero-inner {
     padding: 32px 16px 42px;
   }
@@ -2913,6 +3109,16 @@ body:has(.face-page) .copyright {
     min-width: 0;
     max-width: 100%;
     font-size: 14px;
+  }
+
+  .brand-logo {
+    width: 152px;
+    height: 46px;
+  }
+
+  .site-footer .footer-logo {
+    width: 190px;
+    height: 66px;
   }
 
   .brand span:last-child {
@@ -3146,11 +3352,11 @@ body:has(.face-page) .copyright {
   }
 
   .copyright {
-    padding-bottom: 90px;
+    padding-bottom: 26px;
   }
 
   .sticky-cta {
-    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    display: none;
   }
 
   .cost-hero-copy,
@@ -3194,11 +3400,90 @@ body:has(.face-page) .copyright {
   }
 
   .bikini-circle {
-    position: static !important;
-    width: min(136px, calc(100vw - 32px));
-    height: min(136px, calc(100vw - 32px));
-    margin: 22px 0 0;
+    display: none;
+  }
+
+  .scroll-animations-ready .hero-copy.scroll-reveal,
+  .scroll-animations-ready .cost-hero-copy.scroll-reveal,
+  .scroll-animations-ready .clinic-city-copy.scroll-reveal,
+  .scroll-animations-ready .bikini-copy.scroll-reveal,
+  .scroll-animations-ready .hero-form-wrap.scroll-reveal,
+  .scroll-animations-ready .hero-visual.scroll-reveal,
+  .scroll-animations-ready .cost-hero-image.scroll-reveal,
+  .scroll-animations-ready .quote-card.scroll-reveal,
+  .scroll-animations-ready .why-enquire-card.scroll-reveal,
+  .scroll-animations-ready .package-card.scroll-reveal {
+    opacity: 1;
     transform: none !important;
+  }
+
+  .bikini-hero,
+  .face-hero {
+    min-height: auto;
+    background:
+      linear-gradient(180deg, rgba(0, 82, 65, 0.94), rgba(0, 82, 65, 0.84)),
+      url("/images/bikini-hero.png") center top/cover;
+  }
+
+  .face-hero {
+    background:
+      linear-gradient(180deg, rgba(0, 82, 65, 0.94), rgba(0, 82, 65, 0.84)),
+      url("/images/face-hero.png") center top/cover;
+  }
+
+  .bikini-hero-inner {
+    display: block;
+    width: 100%;
+    min-height: auto;
+    padding: 28px 16px 34px;
+  }
+
+  .bikini-breadcrumbs {
+    position: static;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+    font-size: 12px;
+  }
+
+  .bikini-copy {
+    width: 100%;
+    max-width: none;
+    padding-top: 0;
+  }
+
+  .bikini-copy h1,
+  .bikini-copy h2,
+  .bikini-copy p {
+    width: 100%;
+    max-width: none;
+  }
+
+  .bikini-copy h1 {
+    font-size: clamp(36px, 10vw, 42px);
+  }
+
+  .bikini-copy h2 {
+    font-size: clamp(25px, 8vw, 32px);
+  }
+
+  .bikini-points {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .bikini-points article {
+    grid-template-columns: 42px minmax(0, 1fr);
+    min-height: 0;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .bikini-points strong,
+  .bikini-points small {
+    display: block;
   }
 }
 
@@ -3246,5 +3531,20 @@ body:has(.face-page) .copyright {
     margin-left: -14px;
     margin-right: -14px;
     width: calc(100% + 28px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { IconBadge } from "@/components/IconBadge";
 import { LeadForm } from "@/components/LeadForm";
 import { FAQ, PageSpecific, QuickAnswer, StickyCta } from "@/components/PageBlocks";
 import { JsonLd } from "@/components/schema/JsonLd";
@@ -80,10 +81,10 @@ export default function Page({ params }: Props) {
                   <a className="btn ghost" href="/cost/">View price guide</a>
                 </div>
                 <div className="trust-strip">
-                  <div><span>QS</span><strong>5+</strong> seeded clinic profiles</div>
-                  <div><span>YG</span><strong>2026</strong> UAE price guide</div>
-                  <div><span>FM</span><strong>Free</strong> clinic matching and quotes</div>
-                  <div><span>PS</span><strong>100%</strong> Private and secure</div>
+                  <div><IconBadge icon="QS" variant="trust" /><strong>5+</strong> seeded clinic profiles</div>
+                  <div><IconBadge icon="YG" variant="trust" /><strong>2026</strong> UAE price guide</div>
+                  <div><IconBadge icon="FM" variant="trust" /><strong>Free</strong> clinic matching and quotes</div>
+                  <div><IconBadge icon="PS" variant="trust" /><strong>100%</strong> Private and secure</div>
                 </div>
               </div>
               <div className="hero-visual" aria-hidden="true" />
@@ -105,7 +106,7 @@ export default function Page({ params }: Props) {
               <div className="treatment-grid">
                 {treatmentTiles.map(([label, href, icon]) => (
                   <a className="treatment-card" href={href} key={href}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <span>
                       <h3>{label}</h3>
                       <p>View prices and clinic options.</p>
@@ -159,7 +160,7 @@ export default function Page({ params }: Props) {
                   ["Local UAE clinics only", "Verified clinics in Dubai, Abu Dhabi and Sharjah.", "LC"]
                 ].map(([title, text, icon]) => (
                   <article key={title}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <h3>{title}</h3>
                     <p>{text}</p>
                   </article>
@@ -171,7 +172,7 @@ export default function Page({ params }: Props) {
               <div className="guide-grid">
                 {guideTiles.map(([title, href, text, icon]) => (
                   <a className="guide-card" href={href} key={href}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <span>
                       <h3>{title}</h3>
                       <p>{text}</p>
@@ -252,7 +253,7 @@ export default function Page({ params }: Props) {
                   ["No hidden fees", "What you see is what you pay", "NF"]
                 ].map(([title, text, icon]) => (
                   <article key={title}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <span>
                       <strong>{title}</strong>
                       <small>{text}</small>
@@ -289,7 +290,7 @@ export default function Page({ params }: Props) {
                   <tbody>
                     {costRows.map(([icon, area, session, pack, time]) => (
                       <tr key={area}>
-                        <td><span className="row-icon">{icon}</span><strong>{area}</strong></td>
+                        <td><IconBadge icon={icon} variant="row" /><strong>{area}</strong></td>
                         <td>{session}</td>
                         <td>{pack}</td>
                         <td>{time}</td>
@@ -327,7 +328,7 @@ export default function Page({ params }: Props) {
                 <div className="included-list">
                   {includedItems.map(([title, text, icon]) => (
                     <article key={title}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <span>
                         <strong>{title}</strong>
                         <small>{text}</small>
@@ -350,7 +351,7 @@ export default function Page({ params }: Props) {
           <section className="cost-section cost-bottom">
             <div className="section-inner">
               <div className="green-guide-band">
-                <span className="tile-icon">GR</span>
+                <IconBadge icon="GR" />
                 <h2>Not sure which treatment is right for you?</h2>
                 <p>
                   Compare technologies, read guides, and find the best treatment
@@ -365,7 +366,7 @@ export default function Page({ params }: Props) {
                   ["Safe, effective & proven", "Your safety is our priority", "SP"]
                 ].map(([title, text, icon]) => (
                   <article key={title}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <span>
                       <strong>{title}</strong>
                       <small>{text}</small>
@@ -424,10 +425,10 @@ export default function Page({ params }: Props) {
                 <a className="btn ghost" href="/cost/">View price guide</a>
               </div>
               <div className="trust-strip city-trust">
-                <div><span>SC</span><strong>5+</strong> seeded clinic profiles</div>
-                <div><span>PS</span><strong>100%</strong> private and secure</div>
-                <div><span>FM</span><strong>Free</strong> matching service</div>
-                <div><span>PG</span><strong>2026</strong> price guide</div>
+                <div><IconBadge icon="SC" variant="trust" /><strong>5+</strong> seeded clinic profiles</div>
+                <div><IconBadge icon="PS" variant="trust" /><strong>100%</strong> private and secure</div>
+                <div><IconBadge icon="FM" variant="trust" /><strong>Free</strong> matching service</div>
+                <div><IconBadge icon="PG" variant="trust" /><strong>2026</strong> price guide</div>
               </div>
             </div>
           </section>
@@ -488,7 +489,7 @@ export default function Page({ params }: Props) {
               <div className="city-why-grid">
                 {whyItems.map(([title, text, icon]) => (
                   <article key={title}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <h3>{title}</h3>
                     <p>{text}</p>
                   </article>
@@ -553,7 +554,7 @@ export default function Page({ params }: Props) {
                     ["Personalised treatment plans", "PT"]
                   ].map(([text, icon]) => (
                     <article key={text}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <strong>{text}</strong>
                     </article>
                   ))}
@@ -572,7 +573,7 @@ export default function Page({ params }: Props) {
                   ["Questions to ask before booking", "Ask about machine type, practitioner training, patch tests, cooling, treatment intervals and experience with South Asian, Middle Eastern and African skin tones.", "QA"]
                 ].map(([title, text, icon]) => (
                   <article key={title}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <h2>{title}</h2>
                     <p>{text}</p>
                   </article>
@@ -619,7 +620,7 @@ export default function Page({ params }: Props) {
                   ["Support at every step", "Our team is here to help before, during and after.", "HS"]
                 ].map(([title, text, icon]) => (
                   <article key={title}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <span>
                       <strong>{title}</strong>
                       <small>{text}</small>
@@ -743,7 +744,7 @@ export default function Page({ params }: Props) {
                       <span className="badge">{offer.badge}</span>
                       <strong>{offer.off}</strong>
                     </div>
-                    <span className="tile-icon">{offer.icon}</span>
+                    <IconBadge icon={offer.icon} />
                     <h3>{offer.title}</h3>
                     <p>{offer.body}</p>
                     <strong>{offer.clinic}</strong>
@@ -770,7 +771,7 @@ export default function Page({ params }: Props) {
                   ["Real results", "Look for proven technology and genuine patient reviews.", "RR"]
                 ].map(([title, text, icon]) => (
                   <article key={title}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <strong>{title}</strong>
                     <p>{text}</p>
                   </article>
@@ -861,7 +862,7 @@ export default function Page({ params }: Props) {
                     ["From (per session)", "AED 650", "PR"]
                   ].map(([title, text, icon]) => (
                     <article key={title}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <span><strong>{title}</strong><small>{text}</small></span>
                     </article>
                   ))}
@@ -886,7 +887,7 @@ export default function Page({ params }: Props) {
                     ["Clinics across Dubai & Abu Dhabi", "CL"]
                   ].map(([text, icon]) => (
                     <article key={text}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <strong>{text}</strong>
                     </article>
                   ))}
@@ -920,7 +921,7 @@ export default function Page({ params }: Props) {
                 <div className="coverage-grid">
                   {coverage.map(([title, sub, icon]) => (
                     <article key={title}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <strong>{title}</strong>
                       <small>{sub}</small>
                     </article>
@@ -935,7 +936,7 @@ export default function Page({ params }: Props) {
                   <div className="full-benefit-grid">
                     {benefitItems.map(([title, text, icon]) => (
                       <article key={title}>
-                        <span className="tile-icon">{icon}</span>
+                        <IconBadge icon={icon} />
                         <span><strong>{title}</strong><small>{text}</small></span>
                       </article>
                     ))}
@@ -1064,7 +1065,7 @@ export default function Page({ params }: Props) {
                     ["From (per session)", "AED 95", "PR"]
                   ].map(([title, text, icon]) => (
                     <article key={title}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <span><strong>{title}</strong><small>{text}</small></span>
                     </article>
                   ))}
@@ -1089,7 +1090,7 @@ export default function Page({ params }: Props) {
                     ["Clinics across Dubai & Abu Dhabi", "CL"]
                   ].map(([text, icon]) => (
                     <article key={text}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <strong>{text}</strong>
                     </article>
                   ))}
@@ -1123,7 +1124,7 @@ export default function Page({ params }: Props) {
                 <div className="coverage-grid underarm-benefits">
                   {whyUnderarm.map(([title, text, icon]) => (
                     <article key={title}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <strong>{title}</strong>
                       <small>{text}</small>
                     </article>
@@ -1137,7 +1138,7 @@ export default function Page({ params }: Props) {
                   <div className="expect-steps">
                     {expectSteps.map(([step, title, text]) => (
                       <article key={step}>
-                        <span className="tile-icon">{step}</span>
+                        <IconBadge icon={step} />
                         <strong>{title}</strong>
                         <small>{text}</small>
                       </article>
@@ -1254,7 +1255,7 @@ export default function Page({ params }: Props) {
                     ["Expert care you can trust", "EC"]
                   ].map(([text, icon]) => (
                     <article key={text}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <strong>{text}</strong>
                     </article>
                   ))}
@@ -1291,7 +1292,7 @@ export default function Page({ params }: Props) {
                 <h2>Why choose laser hair removal for bikini?</h2>
                 {bikiniBenefits.map(([title, text, icon]) => (
                   <article key={title}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <strong>{title}</strong>
                     <p>{text}</p>
                   </article>
@@ -1375,7 +1376,7 @@ export default function Page({ params }: Props) {
                     ["Smooth results, long-lasting", "SR"]
                   ].map(([text, icon]) => (
                     <article key={text}>
-                      <span className="tile-icon">{icon}</span>
+                      <IconBadge icon={icon} />
                       <strong>{text}</strong>
                     </article>
                   ))}
@@ -1412,7 +1413,7 @@ export default function Page({ params }: Props) {
                 <h2>Why choose laser hair removal for your face?</h2>
                 {faceBenefits.map(([title, text, icon]) => (
                   <article key={title}>
-                    <span className="tile-icon">{icon}</span>
+                    <IconBadge icon={icon} />
                     <strong>{title}</strong>
                     <p>{text}</p>
                   </article>
@@ -1441,6 +1442,129 @@ export default function Page({ params }: Props) {
               <h2>Frequently asked questions</h2>
               <div className="faq">
                 {faceFaqs.map((faq) => (
+                  <details key={faq.q}>
+                    <summary>{faq.q}</summary>
+                    <p>{faq.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        </main>
+        <StickyCta />
+      </>
+    );
+  }
+
+  if (page.slug === "legs") {
+    const legsClinics = clinics
+      .filter((clinic) => clinic.treatments.includes("legs"))
+      .sort((a, b) => Number(b.featured) - Number(a.featured) || a.priceFrom - b.priceFrom)
+      .slice(0, 3);
+    const legsBenefits = [
+      ["Long-lasting results", "Reduces hair growth for smooth legs", "LR"],
+      ["Safe & effective", "Advanced lasers for all skin types", "SE"],
+      ["Quick sessions", "Full legs in 30-45 mins, lower legs in 20-30 mins", "QS"],
+      ["Fewer ingrown hairs", "Smoother skin with better comfort", "FI"]
+    ];
+    const legsFaqs = [
+      { q: "How many sessions are required for legs laser hair removal?", a: "Most clients need 6 to 8 sessions, spaced around 4 to 6 weeks apart." },
+      { q: "Does legs laser hair removal hurt?", a: "It usually feels like warmth or a quick snap. Larger areas may take longer, but cooling helps comfort." },
+      { q: "What is the difference between full legs and lower legs?", a: "Lower legs usually include knee to ankle, while full legs include upper and lower legs. Exact coverage can vary by clinic." },
+      { q: "Is legs laser hair removal safe for all skin types?", a: "It can be safe when the laser technology and settings are matched to your skin tone." },
+      { q: "Can I shave between my laser sessions?", a: "Yes. Shaving is allowed and usually recommended. Avoid waxing or plucking between sessions." }
+    ];
+
+    return (
+      <>
+        <JsonLd data={schemas} />
+        <main className="legs-page bikini-page">
+          <section className="legs-hero bikini-hero">
+            <div className="bikini-hero-inner">
+              <nav className="bikini-breadcrumbs" aria-label="Breadcrumb">
+                <a href="/">Home</a><span>&rsaquo;</span><span>Treatment areas</span><span>&rsaquo;</span><span>Legs</span>
+              </nav>
+              <div className="bikini-copy">
+                <h1>Legs laser hair removal</h1>
+                <h2>Smooth legs, every day</h2>
+                <p>
+                  Safe, effective and long-lasting hair reduction for your full
+                  legs or lower legs. Enjoy silky smooth skin with laser
+                  technology you can trust.
+                </p>
+                <div className="bikini-points">
+                  {[
+                    ["Safe for all skin types", "SF"],
+                    ["Long-lasting smooth results", "LR"],
+                    ["Expert care & advanced lasers", "EC"]
+                  ].map(([text, icon]) => (
+                    <article key={text}>
+                      <IconBadge icon={icon} />
+                      <strong>{text}</strong>
+                    </article>
+                  ))}
+                </div>
+              </div>
+              <div className="bikini-circle">Silky smooth legs<br />Confidence in every step</div>
+            </div>
+          </section>
+
+          <section className="section bikini-content">
+            <div className="section-inner">
+              <QuickAnswer>
+                Legs laser hair removal in Dubai usually costs AED 140-350 per
+                session depending on full legs or lower legs, and the number of
+                sessions needed.
+              </QuickAnswer>
+
+              <h2>Featured clinics</h2>
+              <div className="face-clinic-grid bikini-clinic-grid">
+                {legsClinics.map((clinic) => (
+                  <article className="bikini-clinic-card" key={clinic.id}>
+                    <span className="badge">DHA signal</span>
+                    <h3>{clinic.name}</h3>
+                    <p>{clinic.city} - {clinic.areas.join(", ")}</p>
+                    <p><strong>From AED {clinic.priceFrom}</strong> | {clinic.rating} rating ({clinic.reviewCount} reviews)</p>
+                    <p>{clinic.technologies.join(", ")}</p>
+                    <a className="btn ghost" href="#lead-form">Request quote</a>
+                  </article>
+                ))}
+              </div>
+              <a className="center-link" href="/clinics/dubai/">View all clinics & offers &rarr;</a>
+
+              <div className="bikini-benefit-band face-benefit-band">
+                <h2>Why choose laser hair removal for legs?</h2>
+                {legsBenefits.map(([title, text, icon]) => (
+                  <article key={title}>
+                    <IconBadge icon={icon} />
+                    <strong>{title}</strong>
+                    <p>{text}</p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="deals-enquiry bikini-enquiry">
+                <div id="lead-form" className="deals-form-card">
+                  <p className="eyebrow">Enquiry</p>
+                  <h2>Get matched with UAE clinics</h2>
+                  <p>Share your details and we will connect you with the best offers for your needs.</p>
+                  <LeadForm sourcePage="/legs/" />
+                </div>
+                <aside className="why-enquire-card">
+                  <h2>Why enquire with us?</h2>
+                  <ul>
+                    <li>We compare exclusive deals from top clinics</li>
+                    <li>No spam. Only relevant offers</li>
+                    <li>Free, fast and confidential</li>
+                    <li>Save up to 35% on selected packages</li>
+                  </ul>
+                  <p><strong>4.8/5</strong> <span>★★★★★</span> from 1,200+ reviews</p>
+                </aside>
+              </div>
+
+              <h2>Frequently asked questions</h2>
+              <div className="faq">
+                {legsFaqs.map((faq) => (
                   <details key={faq.q}>
                     <summary>{faq.q}</summary>
                     <p>{faq.a}</p>
